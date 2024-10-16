@@ -22,6 +22,11 @@ const Navbar = () => {
 					</h1>
 				</Link>
 			</div>
+			<div className='flex items-center gap-3'>
+				<p>Home</p>
+				<p>Create</p>
+				<p>Settings</p>
+			</div>
 			<div className='flex items-center gap-x-3'>
 				<Button className=' text-white' size={'sm'} variant={'premium'}>
 					Upgrade
