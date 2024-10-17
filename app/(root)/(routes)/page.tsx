@@ -13,8 +13,6 @@ const RootPage = async ({
 		name: string;
 	};
 }) => {
-	const user = await currentUser();
-	console.log('🚀 ~ user:', user);
 	const data = await prismadb.figure.findMany({
 		where: {
 			categoryId: searchParams.categoryId,
