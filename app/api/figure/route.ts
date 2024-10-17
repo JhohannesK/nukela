@@ -7,7 +7,6 @@ export async function POST(req: Request) {
    try {
       const body: Figure = await req.json();
       const user = await currentUser()
-      console.log("🚀 ~ POST ~ user:", user)
       const { categoryId, src, name, description, instructions, seed } = body
 
 

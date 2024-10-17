@@ -6,7 +6,7 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -32,6 +32,23 @@ model Figure {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  category   Category @relation(fields: [categoryId], references: [id])
+  category   Category  @relation(fields: [categoryId], references: [id])
   categoryId String
+  Message    Message[]
+}
+
+enum Role {
+  user
+  figureAI
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  role      Role
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  figure   Figure @relation(fields: [figureId], references: [id], onDelete: Cascade)
+  figureId String
 }
