@@ -24,7 +24,7 @@ const Navbar = () => {
 			</div>
 			<div className='flex items-center gap-3'>
 				<p>Home</p>
-				<p>Create</p>
+				<Link href={'/figure/new'}>Create</Link>
 				<p>Settings</p>
 			</div>
 			<div className='flex items-center gap-x-3'>

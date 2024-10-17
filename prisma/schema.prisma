@@ -17,14 +17,14 @@ datasource db {
 model Category {
   id     String   @id @default(uuid())
   name   String
-  figure figure[]
+  figure Figure[]
 }
 
-model figure {
+model Figure {
   id           String   @id @default(uuid())
   userId       String
   userName     String
-  src          String
+  src          String?
   name         String   @db.Text
   description  String
   instructions String   @db.Text
