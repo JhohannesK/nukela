@@ -1,5 +1,5 @@
 import { Figure, Role } from '@prisma/client';
-import React from 'react';
+import React, { ElementRef, useEffect, useRef } from 'react';
 import ChatMessage from './chat-message-role';
 
 const ChatMessages = ({
@@ -16,12 +16,16 @@ const ChatMessages = ({
 		src?: string;
 	}[];
 }) => {
+	const scrollRef = useRef<ElementRef<'div'>>(null);
+	useEffect(() => {
+		scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+	}, [messages.length]);
 	return (
 		<div className='flex-1 overflow-y-auto pr-4'>
 			<ChatMessage
 				role={Role.figureAI}
 				content={`Hello, I am ${figure.name}, ${figure.description}`}
-				isLoading={isLoading}
+				// isLoading={isLoading}
 			/>
 			{messages.map((message, index) => (
 				<ChatMessage
@@ -38,6 +42,7 @@ const ChatMessages = ({
 					isLoading
 				/>
 			)}
+			<div ref={scrollRef} />
 		</div>
 	);
 };
