@@ -11,6 +11,15 @@ importers:
       '@clerk/nextjs':
         specifier: ^5.7.3
         version: 5.7.3(next@14.2.15(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@langchain/core':
+        specifier: ^0.3.13
+        version: 0.3.13(openai@4.67.3(encoding@0.1.13)(zod@3.23.8))
+      '@langchain/openai':
+        specifier: ^0.3.8
+        version: 0.3.8(@langchain/core@0.3.13(openai@4.67.3(encoding@0.1.13)(zod@3.23.8)))(encoding@0.1.13)
+      '@langchain/pinecone':
+        specifier: ^0.1.1
+        version: 0.1.1(@langchain/core@0.3.13(openai@4.67.3(encoding@0.1.13)(zod@3.23.8)))
       '@pinecone-database/pinecone':
         specifier: ^3.0.3
         version: 3.0.3
@@ -313,6 +322,12 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.2.26 <0.4.0'
+
+  '@langchain/pinecone@0.1.1':
+    resolution: {integrity: sha512-NxIqag6tp2rFKXjy9DTx+wBERXgDlWLlZ56nyje9G/mEd3TCSs9bZk8Tjx8rkT19BgvdHOSqyMyiTzEz6o5cKw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@langchain/core': '>=0.2.21 <0.4.0'
 
   '@langchain/textsplitters@0.1.0':
     resolution: {integrity: sha512-djI4uw9rlkAb5iMhtLED+xJebDdAG935AdP4eRTB02R7OB/act55Bj9wsskhZsvuyQRpO4O1wQOp85s6T6GWmw==}
@@ -1117,6 +1132,10 @@ packages:
   filter-obj@5.1.0:
     resolution: {integrity: sha512-qWeTREPoT7I0bifpPUXtxkZJ1XJzxWtfoWWkdVGqa+eCr3SHW/Ocp89o8vLvbUuQnadybJpjOKu4V+RwO6sGng==}
     engines: {node: '>=14.16'}
+
+  flat@5.0.2:
+    resolution: {integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==}
+    hasBin: true
 
   follow-redirects@1.15.9:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
@@ -2102,6 +2121,13 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@langchain/pinecone@0.1.1(@langchain/core@0.3.13(openai@4.67.3(encoding@0.1.13)(zod@3.23.8)))':
+    dependencies:
+      '@langchain/core': 0.3.13(openai@4.67.3(encoding@0.1.13)(zod@3.23.8))
+      '@pinecone-database/pinecone': 3.0.3
+      flat: 5.0.2
+      uuid: 10.0.0
+
   '@langchain/textsplitters@0.1.0(@langchain/core@0.3.13(openai@4.67.3(encoding@0.1.13)(zod@3.23.8)))':
     dependencies:
       '@langchain/core': 0.3.13(openai@4.67.3(encoding@0.1.13)(zod@3.23.8))
@@ -2849,6 +2875,8 @@ snapshots:
       to-regex-range: 5.0.1
 
   filter-obj@5.1.0: {}
+
+  flat@5.0.2: {}
 
   follow-redirects@1.15.9: {}
 

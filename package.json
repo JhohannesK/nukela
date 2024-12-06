@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.7.3",
+    "@langchain/core": "^0.3.13",
+    "@langchain/openai": "^0.3.8",
+    "@langchain/pinecone": "^0.1.1",
     "@pinecone-database/pinecone": "^3.0.3",
     "@prisma/client": "5.21.0",
     "@radix-ui/react-avatar": "^1.1.1",
