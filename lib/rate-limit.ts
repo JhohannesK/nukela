@@ -7,4 +7,6 @@ export async function rateLimit(identifier: string) {
       analytics: true,
       prefix: "@upstash/ratelimit"
    })
+
+   return await rateLimit.limit(identifier)
 }

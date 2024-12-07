@@ -16,6 +16,7 @@ const ChatMessages = ({
 		src?: string;
 	}[];
 }) => {
+	console.log('🚀 ~ messages:', messages);
 	const scrollRef = useRef<ElementRef<'div'>>(null);
 	useEffect(() => {
 		scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
